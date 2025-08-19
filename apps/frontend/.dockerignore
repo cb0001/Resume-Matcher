@@ -1,0 +1,34 @@
+# Node.js
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Next.js
+.next
+out
+
+# 版本控制
+.git
+.gitignore
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+
+# 操作系统
+.DS_Store
+Thumbs.db
+
+# 测试文件
+coverage
+*.test.js
+*.spec.js
+__tests__
+
+# 其他
+README.md
+LICENSE
+*.md

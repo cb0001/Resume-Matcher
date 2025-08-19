@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     # which is copied to the user's .env file upon setup.
     PROJECT_NAME: str = "Resume Matcher"
     FRONTEND_PATH: str = os.path.join(os.path.dirname(__file__), "frontend", "assets")
-    ALLOWED_ORIGINS: List[str] = ["http://localhost:3000", "http://127.0.0.1:3000"]
+    ALLOWED_ORIGINS: List[str] = ["http://localhost:3000", "http://127.0.0.1:3000", "https://ai-resume-frontend-b4gnezg0dpdcajgd.eastus2-01.azurewebsites.net"]
     DB_ECHO: bool = False
     PYTHONDONTWRITEBYTECODE: int = 1
     SYNC_DATABASE_URL: Optional[str] = None
@@ -24,6 +24,9 @@ class Settings(BaseSettings):
     EMBEDDING_API_KEY: Optional[str] = None
     EMBEDDING_BASE_URL: Optional[str] = None
     EMBEDDING_MODEL: Optional[str] = "dengcao/Qwen3-Embedding-0.6B:Q8_0"
+    AZURE_OPENAI_API_KEY: Optional[str] = None
+    AZURE_OPENAI_ENDPOINT: Optional[str] = None
+    AZURE_OPENAI_API_VERSION: Optional[str] = "2024-05-01-preview"
 
     model_config = SettingsConfigDict(
         env_file=os.path.join(os.path.dirname(__file__), os.pardir, os.pardir, ".env"),

@@ -44,6 +44,13 @@ class AgentManager:
                 model = opts.get("model", self.model)
                 return OllamaProvider(model_name=model,
                                       opts=opts)
+            case 'azure':
+                from .providers.azure_openai import  AzureLLMProvider
+                model=opts.get("model", self.model)
+                api_key = opts.get("llm_api_key", settings.AZURE_OPENAI_API_KEY)
+                return AzureLLMProvider(deployment_name=model,
+                                        api_key=api_key,
+                                        opts=opts)
             case _:
                 from .providers.llama_index import LlamaIndexProvider
                 llm_api_key = opts.get("llm_api_key", settings.LLM_API_KEY)
